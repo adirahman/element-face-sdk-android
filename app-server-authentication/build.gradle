@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.element.fmex"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    // Required
+
+    implementation project(path: ':element-face-cam')
+    implementation project(path: ':element-face-core')
+
+    implementation 'androidx.work:work-runtime:2.0.1'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    implementation 'com.amazonaws:aws-android-sdk-core:2.8.5'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.8.5'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+
+    // Optional libraries for rich UI and animations
+
+    implementation project(path: ':element-face-ui')
+
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+    // Needed for this demo app
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+}

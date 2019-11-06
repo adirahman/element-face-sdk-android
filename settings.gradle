@@ -1,0 +1,7 @@
+include ':app-mobile-enrollment'
+include ':app-server-authentication'
+
+include ':element-face-cam'
+include ':element-face-core'
+include ':element-face-support'
+include ':element-face-ui'
