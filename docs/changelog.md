@@ -1,6 +1,15 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.1.3
+[Jan 7, 2020]
+* Restored EXTRA_SECONDARY_TUTORIAL
+
+#### Version: 1.1.2
+[Dec 20, 2019]
+* Supported the Android 10 OS
+* Rolled back EXTRA_SECONDARY_TUTORIAL
+
 #### Version: 1.1.1
 [Nov 1, 2019]
 * Supported more UI customization - please refer to [element-face-ui](./element-face-ui.md)

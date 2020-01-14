@@ -31,9 +31,9 @@ Keys:
 
 | Key | Default Value (ms) | Notes |
 |---|---|---|
-| elementFaceUiGazeFlowerAnimDurMs | 1000 | Animation speed for first, _spinning flower_, part of gaze animation. |
-| elementFaceUiGazeLoaderAnimDurMs | 2000 | Animation speed for second, _checkmark loader_, part of gaze animation. |
-| elementFaceUiOutlineAnimDurMs | 1800 | Animation speed for Face Detection progress outline. |
+| element_gazeFlowerAnimDurMs | 1000 | Animation speed for first, _spinning flower_, part of gaze animation. |
+| element_gazeLoaderAnimDurMs | 2000 | Animation speed for second, _checkmark loader_, part of gaze animation. |
+| element_outlineAnimDurMs | 1800 | Animation speed for Face Detection progress outline. |
 
 #### Colors
 
@@ -47,13 +47,13 @@ Keys:
 
 | Key | Default Value | Notes |
 |---|---|---|
-| elementFaceUiCheckmarkButton | #FF00A8FF | Checkmark button, not the checkmark itself which is always white. |
-| elementFaceUiFlowerPetal | #80FFFFFF | Spinning circles in first half of `CheckmarkLoaderView` animation. |
-| elementFaceUiRingColor | #FFFFFFFF | Starting color of "ring" in `CheckmarkLoaderView`, end color is `elementFaceUiCheckmarkButton`. |
-| elementFaceUiOutlineNormalColor | #FFB2B2B2 | Default color of Face Detection outline. |
-| elementFaceUiOutlineDetectedColor | #FF00A8FF | Active color of Face Detection outline. |
-| elementFaceUiOutlineErrorColor | #FFE00C0C | Error color of Face Detection outline. |
-| elementFaceUiStencilBgColor | #AA000000 | Color used as background of Face Detection screen. |
+| element_checkmarkButton | #FF00A8FF | Checkmark button, not the checkmark itself which is always white. |
+| element_flowerPetal | #80FFFFFF | Spinning circles in first half of `CheckmarkLoaderView` animation. |
+| element_ringColor | #FFFFFFFF | Starting color of "ring" in `CheckmarkLoaderView`, end color is `elementFaceUiCheckmarkButton`. |
+| element_outlineNormalColor | #FFB2B2B2 | Default color of Face Detection outline. |
+| element_outlineDetectedColor | #FF00A8FF | Active color of Face Detection outline. |
+| element_outlineErrorColor | #FFE00C0C | Error color of Face Detection outline. |
+| element_stencilBgColor | #AA000000 | Color used as background of Face Detection screen. |
 
 #### Drawables
 
@@ -67,7 +67,7 @@ Keys:
 
 | Key | Default Value | Notes |
 |---|---|---|
-| elementFaceUiOutlineCompletionMarker | @drawable/ic_check | The icon that appears when Face Detection is complete. |
+| element_outlineCompletionMarker | @drawable/ic_check | The icon that appears when Face Detection is complete. |
 
 #### Strings
 Go to `src/main/res/values/strings.xml` and add
@@ -78,15 +78,24 @@ String Keys:
 
 | Key | Default Text |
 |---|---|
-| center_face | Center face in frame |
-| keep_centered | Keep face centered  |
-| watch_circles | Watch the circles  |
-| clear_face_view | Make sure we have a clear view of your face |
-| hold_phone_eye_level | Hold phone at eye level |
+| element_centerFace | Center face in frame |
+| element_keepCentered | Keep face centered  |
+| element_watchCircles | Watch the circles  |
+| element_clearFaceView | Make sure we have a clear view of your face |
+| element_holdPhoneEyeLevel | Hold phone at eye level |
 | | |
-| selfie_move_message | We\'ll automatically take a selfie then you\'ll be prompted to move your eyes to make sure it\'s you. |
-| selfie_message | You\'ll be asked to frame your face then we\'ll snap a selfie. |
-
+| element_selfieMoveMessage | We\'ll automatically take a selfie then you\'ll be prompted to move your eyes to make sure it\'s you. |
+| element_selfieMessage | You\'ll be asked to frame your face then we\'ll snap a selfie. |
+| | |
+| element_tryAgain | Please try again |
+| element_matchFace | Match Face to outline |
+| element_gazeFollowDot | Follow the dot |
+| element_moveCamera | Move camera away from your face. Match Face to outline |
+| element_holdFace | Keep your eyes open\nHold face steady |
+| element_onNoFace | Please position your face inside the outline |
+| element_gazeFailed | Please follow the dot |
+| element_processing | Processing… |
+| | |
 
 #### Animations
 We're using LottieFiles json animations. Just put the exact file name in the right directory below to override it.
