@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.element.cmex"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    // [required] Element libs
+    implementation project(path: ':element-card')
+    implementation project(path: ':element-face-cam')
+    implementation project(path: ':element-face-core')
+
+    // [required] third-party dependencies
+    implementation 'androidx.work:work-runtime:2.0.1'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.8.5'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.8.5'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+
+    // [optional] for this demo app
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}

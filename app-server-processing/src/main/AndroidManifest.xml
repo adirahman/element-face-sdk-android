@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.element.spex">
+
+    <application
+        android:name=".SpApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher">
+
+        <activity
+            android:name=".SpMainActivity"
+            android:label="Element Server Processing"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SpEnrollActivity"
+            android:label="Server Enroll"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/CamTheme.Blue"/>
+
+        <activity
+            android:name=".SpAuthActivity"
+            android:label="Server Auth"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/CamTheme.Blue"/>
+
+    </application>
+</manifest>

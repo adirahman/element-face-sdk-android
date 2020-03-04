@@ -1,0 +1,10 @@
+<resources>
+    <string name="user_id">User ID</string>
+    <string name="error_msg_empty_fields">Please enter user information</string>
+    <string name="detect">DETECT</string>
+    <string name="detect_info">Enter a user ID, tap on DETECT, and start face detection next.</string>
+    <string name="captured">Hello, %s! Face detected.</string>
+    <string name="capture_failed">Please position your face inside the outline and follow the instructions</string>
+    <string name="retry">Try Again</string>
+    <string name="exit">Exit</string>
+</resources>

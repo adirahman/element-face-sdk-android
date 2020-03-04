@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.element.fdex"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+    sourceSets {
+        main.java.srcDirs += ["./app-face-/java"]
+    }
+}
+
+dependencies {
+    // [required] Element libs
+    implementation project(path: ':element-face-cam')
+
+    // [required] third-party dependencies
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation 'com.google.code.gson:gson:2.2.4'
+
+    // [optional] for this demo app
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}

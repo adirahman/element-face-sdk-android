@@ -1,6 +1,13 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.2.0
+* Introducing [`element-face-http`](element-face-http-guide.md) and [`element-card-sdk`](element-card-sdk-guide.md)
+* Made `element-face-cam` a standalone module. It's possible to import `element-face-cam` for face detection only. Please refer to [`app-face-detection`](../app-face-detection).
+* `ElementFaceCaptureActivity` can handle enrollment and authentication for server processing.
+* Updated Face Capture API. Simplified the callback with only one [`Capture`](element-face-sdk-guide.md#user-face-matching-on-server) as the argument.
+* Enabling face tutorials by default
+
 #### Version: 1.1.3
 [Jan 7, 2020]
 * Restored EXTRA_SECONDARY_TUTORIAL

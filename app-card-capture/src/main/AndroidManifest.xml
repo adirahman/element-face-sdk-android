@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.element.cmex" >
+
+    <application
+        android:name=".CmApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher">
+
+        <activity
+            android:name=".CmMainActivity"
+            android:label="Element Card Matching"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".CmActivity"
+            android:label="Card Matching"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/CamTheme.Blue"/>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.element.fmex"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    // [required] Element libs
+    implementation project(path: ':element-face-cam')
+    implementation project(path: ':element-face-core')
+
+    // [required] third-party dependencies
+    implementation 'androidx.work:work-runtime:2.0.1'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.8.5'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.8.5'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+    // implementation 'com.google.code.gson:gson:2.2.4' // Gson can be omitted if AWS presents
+
+    // [optional] for enhanced UI and animations
+    implementation project(path: ':element-face-ui')
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+    // [optional] for this demo app
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}
