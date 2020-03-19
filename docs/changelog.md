@@ -1,6 +1,10 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.2.2
+[Mar 17, 2020]
+* Imrpoved UX for liveness detection
+
 #### Version: 1.2.1
 [Mar 10, 2020]
 * Hotfix to post scores to the backend
