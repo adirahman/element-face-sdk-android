@@ -1,6 +1,10 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.2.3
+[Mar 25, 2020]
+* Adjusted background services sliglty
+
 #### Version: 1.2.2
 [Mar 17, 2020]
 * Imrpoved UX for liveness detection
