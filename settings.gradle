@@ -1,9 +1,5 @@
-include ':app-card-capture'
-include ':app-face-detection'
-include ':app-mobile-processing'
-include ':app-server-processing'
+include ':app-face'
 
-include ':element-card'
 include ':element-face-cam'
 include ':element-face-core'
 include ':element-face-support'

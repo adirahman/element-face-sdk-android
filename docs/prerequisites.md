@@ -34,6 +34,15 @@ To obtain a new *EAK* file:
 1. On the top menu bar, click `File -> Project Structure`.
 1. Select your app module under `Modules` on the left pane, click on the `Dependencies` tab, and click on the `+` button at the bottom of the window. In the popup, click `Module Dependency` and select `:[AAR name]`. Click `Ok`.
 
+### Declare Java 8 support
+1. In the app-level build.gradle, add the block below to enable Java 8,
+    ```
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    ```
+
 ### Include the EAK in the application
 1. Create a resources directory at `[project dir]/app/src/main/resources`.
 1. Copy the `element.eak` file into the `resources` directory.

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion globalCompileSdkVersion as int
+    buildToolsVersion globalBuildToolsVersion
+
+    defaultConfig {
+        applicationId "com.element.facex"
+        minSdkVersion globalMinSdkVersion
+        targetSdkVersion globalTargetSdkVersion
+        versionCode project.getProperties().get("versionCode") as int
+        versionName project.getProperties().get("versionName")
+        resValue "string", "app_name", project.getProperties().get("appName")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    // [required] Element libs
+    implementation project(':element-face-cam')
+    implementation project(':element-face-core')
+
+    // [required] dependencies
+    implementation 'androidx.work:work-runtime:2.3.4'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.8.5'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.8.5'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+
+    // [required] for device enrollment
+    implementation project(':element-face-support')
+
+    // [optional] for enhanced UI and animations
+    implementation project(path: ':element-face-ui')
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+    // [optional] for this demo app
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$globalKotlinVersion"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.preference:preference:1.1.1'
+}
