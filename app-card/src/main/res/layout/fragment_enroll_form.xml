@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/element"
+        android:padding="20dp"
+        android:src="@drawable/element_logo" />
+
+    <LinearLayout
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:divider="@android:drawable/divider_horizontal_dark"
+        android:showDividers="middle"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true" >
+
+        <EditText style="@style/DataFormEditTextCap"
+            android:id="@+id/firstName"
+            android:hint="@string/name" />
+
+        <EditText style="@style/DataFormEditTextCap"
+            android:id="@+id/userIdTextView"
+            android:hint="@string/user_id_optional" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/white"
+        android:text="@string/enroll_info" />
+
+    <Button
+        android:id="@+id/localEnroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@null"
+        android:text="@string/add_user" />
+
+</LinearLayout>

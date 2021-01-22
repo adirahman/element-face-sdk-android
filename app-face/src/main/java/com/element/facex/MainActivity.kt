@@ -33,25 +33,21 @@ open class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fabEnroll.setOnClickListener {
-            val mobileEnrollFormFragment = EnrollFormFragment()
-            mobileEnrollFormFragment.show(supportFragmentManager, null)
+            EnrollFormFragment().show(supportFragmentManager, null)
         }
-
         fabFetch.setOnClickListener {
-            val featureFormFragment = FetchFormFragment()
-            featureFormFragment.show(supportFragmentManager, null)
+            FetchFormFragment().show(supportFragmentManager, null)
         }
 
-        userList.layoutManager = LinearLayoutManager(baseContext)
-        userList.adapter = UserInfoAdapter(ArrayList(ElementUserUtils.getUsers(baseContext)), this@MainActivity)
+        facexUserList.layoutManager = LinearLayoutManager(baseContext)
+        facexUserList.adapter = UserInfoAdapter(ArrayList(ElementUserUtils.getUsers(baseContext)), this@MainActivity)
 
-        val itemDecor = DividerItemDecoration(baseContext, VERTICAL)
-        userList.addItemDecoration(itemDecor)
+        facexUserList.addItemDecoration(DividerItemDecoration(baseContext, VERTICAL))
     }
 
     fun onFeaturesFetched() {
         runOnUiThread {
-            (userList.adapter as UserInfoAdapter).refresh(ArrayList(ElementUserUtils.getUsers(baseContext)))
+            (facexUserList.adapter as UserInfoAdapter).refresh(ArrayList(ElementUserUtils.getUsers(baseContext)))
         }
     }
 
@@ -63,8 +59,7 @@ open class MainActivity : AppCompatActivity() {
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION
         )
-
-        (userList.adapter as UserInfoAdapter).refresh(ArrayList(ElementUserUtils.getUsers(baseContext)))
+        (facexUserList.adapter as UserInfoAdapter).refresh(ArrayList(ElementUserUtils.getUsers(baseContext)))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -79,29 +74,32 @@ open class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == ENROLL_REQ_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                showMessage(getString(R.string.enroll_completed))
-            } else {
-                showMessage(getString(R.string.enroll_cancelled))
-            }
-        } else if (requestCode == AUTH_REQ_CODE) {
-            if (resultCode == Activity.RESULT_OK) {
-                val userId = data?.getStringExtra(ElementFaceAuthActivity.EXTRA_ELEMENT_USER_ID)
-                val userInfo = ElementUserUtils.getUser(baseContext, userId!!)
-                val results = data.getStringExtra(ElementFaceAuthActivity.EXTRA_RESULTS)
-                val message: String
-                message = when (results) {
-                    ElementFaceAuthActivity.USER_VERIFIED -> getString(
-                            R.string.msg_verified,
-                            userInfo.name
-                    )
-                    ElementFaceAuthActivity.USER_FAKE -> getString(R.string.msg_fake)
-                    else -> getString(R.string.msg_not_verified)
+        when (requestCode) {
+            ENROLL_REQ_CODE -> {
+                if (resultCode == Activity.RESULT_OK) {
+                    showMessage(getString(R.string.enroll_completed))
+                } else {
+                    showMessage(getString(R.string.enroll_cancelled))
                 }
-                showMessage(message)
-            } else {
-                showMessage(getString(R.string.auth_cancelled))
+            }
+            AUTH_REQ_CODE -> {
+                if (resultCode == Activity.RESULT_OK) {
+                    val userId = data?.getStringExtra(ElementFaceAuthActivity.EXTRA_ELEMENT_USER_ID)
+                    val userInfo = ElementUserUtils.getUser(baseContext, userId!!)
+                    val results = data.getStringExtra(ElementFaceAuthActivity.EXTRA_RESULTS)
+                    val message: String
+                    message = when (results) {
+                        ElementFaceAuthActivity.USER_VERIFIED -> getString(
+                                R.string.msg_verified,
+                                userInfo.name
+                        )
+                        ElementFaceAuthActivity.USER_FAKE -> getString(R.string.msg_fake)
+                        else -> getString(R.string.msg_not_verified)
+                    }
+                    showMessage(message)
+                } else {
+                    showMessage(getString(R.string.auth_cancelled))
+                }
             }
         }
     }
@@ -118,19 +116,17 @@ open class MainActivity : AppCompatActivity() {
 
     fun startFetch(userId: String) {
         val url = getString(R.string.query_api_url)
-        val callback = object : ElementUserQueryTask.Callback {
-            override fun onComplete(p0: UserInfo?, p1: Boolean) {
-                onFeaturesFetched()
-                showMessage(getString(R.string.msg_fetching_succeed))
-            }
-
-            override fun onError(p0: Int, p1: String, p2: MutableMap<String, Any>) {
-                showMessage(getString(R.string.msg_fetching_failed))
-            }
-        }
-
         ElementUserQueryTask(baseContext, url, userId)
-                .post(callback)
+                .post(object : ElementUserQueryTask.Callback {
+                    override fun onComplete(p0: UserInfo?, p1: Boolean) {
+                        onFeaturesFetched()
+                        showMessage(getString(R.string.msg_fetching_succeed))
+                    }
+
+                    override fun onError(p0: Int, p1: String, p2: MutableMap<String, Any>) {
+                        showMessage(getString(R.string.msg_fetching_failed))
+                    }
+                })
     }
 
     fun startAuth(userId: String) {
@@ -144,20 +140,18 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun localAuth(userId: String, uiDelegate: String?) {
-        val intent = Intent(this@MainActivity, ElementFaceAuthActivity::class.java)
-        intent.putExtra(ElementFaceAuthActivity.EXTRA_ELEMENT_USER_ID, userId)
-        intent.putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        intent.putExtra(ElementFaceEnrollActivity.EXTRA_TUTORIAL, true)
-        intent.putExtra(ElementFaceEnrollActivity.EXTRA_SECONDARY_TUTORIAL, true)
+        val intent = Intent(this@MainActivity, ElementFaceAuthActivity::class.java).apply {
+            putExtra(ElementFaceAuthActivity.EXTRA_ELEMENT_USER_ID, userId)
+            putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
+        }
         startActivityForResult(intent, AUTH_REQ_CODE)
     }
 
     private fun serverSideAuth(userId: String, uiDelegate: String?) {
-        val intent = Intent(this@MainActivity, ServerAuthActivity::class.java)
-        intent.putExtra(ServerEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
-        intent.putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        intent.putExtra(ServerEnrollActivity.EXTRA_TUTORIAL, true)
-        intent.putExtra(ServerEnrollActivity.EXTRA_SECONDARY_TUTORIAL, true)
+        val intent = Intent(this@MainActivity, ServerAuthActivity::class.java).apply {
+            putExtra(ServerEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
+            putExtra(ServerEnrollActivity.EXTRA_UI_DELEGATE, uiDelegate)
+        }
         startActivity(intent)
     }
 
@@ -172,21 +166,19 @@ open class MainActivity : AppCompatActivity() {
     }
 
     private fun localEnroll(userId: String, uiDelegate: String?) {
-        val intent = Intent(this@MainActivity, ElementFaceEnrollActivity::class.java)
-        intent.putExtra(ElementFaceEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
-        intent.putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        intent.putExtra(ElementFaceEnrollActivity.EXTRA_TUTORIAL, true)
-        intent.putExtra(ElementFaceEnrollActivity.EXTRA_SECONDARY_TUTORIAL, true)
+        val intent = Intent(this@MainActivity, ElementFaceEnrollActivity::class.java).apply {
+            putExtra(ElementFaceEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
+            putExtra(ElementFaceEnrollActivity.EXTRA_UI_DELEGATE, uiDelegate)
+        }
         startActivityForResult(intent, ENROLL_REQ_CODE)
     }
 
     private fun serverSideEnroll(userId: String, uiDelegate: String?) {
-        val intent = Intent(this@MainActivity, ServerEnrollActivity::class.java)
-        intent.putExtra(ServerEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
-        intent.putExtra(ElementFaceAuthActivity.EXTRA_UI_DELEGATE, uiDelegate)
-        intent.putExtra(ServerEnrollActivity.EXTRA_TUTORIAL, true)
-        intent.putExtra(ServerEnrollActivity.EXTRA_SECONDARY_TUTORIAL, true)
-        intent.putExtra(ServerEnrollActivity.EXTRA_CAPTURE_MODE, "enroll")
+        val intent = Intent(this@MainActivity, ServerEnrollActivity::class.java).apply {
+            putExtra(ServerEnrollActivity.EXTRA_ELEMENT_USER_ID, userId)
+            putExtra(ServerEnrollActivity.EXTRA_UI_DELEGATE, uiDelegate)
+            putExtra(ServerEnrollActivity.EXTRA_CAPTURE_MODE, "enroll")
+        }
         startActivity(intent)
     }
 }

@@ -8,16 +8,13 @@ The SDK was created on a modularized architecture to achieve flexible project de
 - `element-face-support`: the additional support module enabling local device enrollment for offline usage
 - `element-face-ui`: the add-on package for rich UI / UX and animations
 
-It is straightforward to use `element-face-cam` and `element-face-core` for face authentication processing on the server, and `element-face-support` and `element-face-ui` are optional according to usage. Simply declare the modules in the dependency section and the SDK will configure automatically. No extra settings are needed.
+It is straightforward to use `element-face-cam` and `element-face-core` for requesting face authentication in the Element backend, and `element-face-support` and `element-face-ui` are optional according to usage. Simply declare the modules in the dependency section and the SDK will configure automatically.
 
 ## Version Support
-### Android device & development environments
+### Android device, development environments, and Element Dashboard
 - The minimum Android device requirement is Android 5.0 or API 21 (Android OS Lollipop and up). A minimum of 2GB of RAM is recommended for optimal performance.
-- Android Studio 4.0.1 with Gradle Wrapper 6.1.1
-- Android Target SDK Version 29, Build Tool Version 29.0.3, and AndroidX
-
-### Prerequisites
-Please refer to [prerequisites](prerequisites.md) for more information.
+- Android Target SDK Version 29, Build Tool Version 29.0.3, and AndroidX.
+- Please refer to [prerequisites](prerequisites.md) to configure the development environments.
 
 ### Dependencies for `element-face-cam`
 - AndroidX WorkManager: 2.3.4
@@ -33,7 +30,7 @@ Please refer to [prerequisites](prerequisites.md) for more information.
 - AndroidX Kotlin extensions: 1.3.0
 - Airbnb Lottie Library: 3.0.7
 
-References of dependencies can be found in the sample projects at [app-face](../app-face/build.gradle).
+References for dependencies can be found in the sample project at [app-face](../app-face/build.gradle).
 
 ## SDK Integration
 ### Initialize the Element Face SDK

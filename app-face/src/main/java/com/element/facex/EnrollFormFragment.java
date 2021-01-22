@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.element.camera.UserInfo;
+import com.element.common.text.ComTextUtils;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceManager;
-
-import com.element.camera.UserInfo;
-import com.element.common.text.ComTextUtils;
 
 public class EnrollFormFragment extends DialogFragment {
 

@@ -9,15 +9,17 @@ buildscript {
         globalTargetSdkVersion = '29'
         globalBuildToolsVersion = '29.0.3'
         globalGradleVersion = '4.0.1'
-        globalKotlinVersion = '1.3.72'
+        globalKotlinVersion = '1.4.0'
+        globalElementSdkVersion = '[PLACEHOLDER]'
+
+        def localProperties = new Properties()
+        localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+        elementMavenAccessKey = localProperties['elementMavenAccessKey']
+        elementMavenSecretKey = localProperties['elementMavenSecretKey']
     }
 
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
         google()
     }
 
@@ -31,5 +33,12 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "s3://maven.android.discoverelement.com/releases"
+            credentials(AwsCredentials) {
+                accessKey elementMavenAccessKey
+                secretKey elementMavenSecretKey
+            }
+        }
     }
 }

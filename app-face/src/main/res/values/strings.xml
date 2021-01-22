@@ -18,14 +18,14 @@
     <string name="msg_fetching_succeed">User features fetched</string>
     <string name="msg_fetching_failed">Failed to fetch user features</string>
     <string name="fetch_info">Enter the user ID, tap the FETCH button, and features and data associated with the user ID will be downloaded from the server. Once downloaded successfully, tapping the name on the main screen will start user authentication on the device.</string>
-    <string name="enroll_info">Enter information to enroll a new user. Element SDK will assign a user ID if the User ID field is blank. Enrollment will run on the device or server acoording to the settings.</string>
+    <string name="enroll_info">Enter information to enroll a new user. Element SDK will assign a user ID if the User ID field is blank. Enrollment will run on the device or server per the settings.</string>
     <string name="processing">Processing…</string>
     <string name="capture_failed">Please position your face inside the outline and follow the instructions</string>
     <string name="retry">Try Again</string>
     <string name="exit">Exit</string>
     <string name="title_activity_settings">Settings</string>
 
-    <string name="query_api_url">[PLACEHOLDER]</string>
-    <string name="face_auth_url">[PLACEHOLDER]</string>
-    <string name="face_enroll_url">[PLACEHOLDER]</string>
+    <string name="query_api_url">api/ers/register</string>
+    <string name="face_auth_url">api/ers/matching</string>
+    <string name="face_enroll_url">api/ers/enroll</string>
 </resources>

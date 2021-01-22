@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="200dp"
+            tools:layout_editor_absoluteY="100dp">
+
+            <Spinner
+                android:id="@+id/selectDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown" />
+
+            <Button
+                android:id="@+id/scanCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_scan" />
+
+            <Button
+                android:id="@+id/pickPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_from_gallery" />
+
+            <TextView
+                android:id="@+id/docTokenTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/ocrCardScan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_ocr_only" />
+
+            <Button
+                android:id="@+id/displayPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/display_photo" />
+
+            <Button
+                android:id="@+id/assignCardTokens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/assign_token" />
+
+            <TextView
+                android:id="@+id/userNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/userIdTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <TextView
+                android:id="@+id/userDocTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/addUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_user" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/server_flow"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/ocrFm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/server_enroll" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/local_flow"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/localEnroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/face_enroll" />
+
+            <Button
+                android:id="@+id/ocrMatching"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_ocr_fm" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/more_options"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/ocrStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/check_ocr_status" />
+
+            <Button
+                android:id="@+id/deleteUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_account" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

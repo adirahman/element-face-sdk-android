@@ -1,0 +1,33 @@
+<resources>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="DataFormText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
+        <item name="android:textColorHighlight">@color/textColorHighlight</item>
+    </style>
+
+    <style name="DataFormEditText" parent="DataFormText">
+        <item name="android:maxLength">320</item>
+        <item name="android:paddingTop">@dimen/signUpEditTextMargin</item>
+        <item name="android:paddingBottom">@dimen/signUpEditTextMargin</item>
+    </style>
+
+    <style name="DataFormEditTextCap" parent="DataFormText">
+        <item name="android:maxLength">320</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:paddingTop">@dimen/signUpEditTextMargin</item>
+        <item name="android:paddingBottom">@dimen/signUpEditTextMargin</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Medium</item>
+        <item name="android:textColorHint">#77000000</item>
+    </style>
+
+</resources>

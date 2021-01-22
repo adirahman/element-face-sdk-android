@@ -2,13 +2,13 @@ package com.element.facex;
 
 import android.content.Intent;
 
-import androidx.annotation.NonNull;
-
 import com.element.camera.Capture;
 import com.element.camera.ElementFaceAuthTask;
 import com.element.camera.ElementFaceCaptureActivity;
 
 import java.util.Map;
+
+import androidx.annotation.NonNull;
 
 public class ServerAuthActivity extends ElementFaceCaptureActivity {
 
@@ -43,7 +43,7 @@ public class ServerAuthActivity extends ElementFaceCaptureActivity {
         fragment.show(getSupportFragmentManager(), null);
     }
 
-    private ElementFaceAuthTask.Callback callback = new ElementFaceAuthTask.Callback() {
+    private final ElementFaceAuthTask.Callback callback = new ElementFaceAuthTask.Callback() {
         @Override
         public void onComplete(boolean verified, String message, Map<String, Object> details) {
             showResult(message, R.drawable.icon_check);

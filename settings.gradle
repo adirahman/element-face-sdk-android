@@ -1,6 +1,2 @@
 include ':app-face'
-
-include ':element-face-cam'
-include ':element-face-core'
-include ':element-face-support'
-include ':element-face-ui'
+include ':app-card'

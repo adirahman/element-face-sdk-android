@@ -1,7 +1,5 @@
 package com.element.facex;
 
-import androidx.annotation.NonNull;
-
 import com.element.camera.Capture;
 import com.element.camera.ElementFaceCaptureActivity;
 import com.element.camera.ElementFaceEnrollTask;
@@ -10,7 +8,11 @@ import com.element.camera.UserInfo;
 
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+
 public class ServerEnrollActivity extends ElementFaceCaptureActivity {
+
+    private boolean isUserEnrolled;
 
     @Override
     public void onImageCaptured(Capture capture) {
@@ -27,16 +29,26 @@ public class ServerEnrollActivity extends ElementFaceCaptureActivity {
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (!isUserEnrolled) {
+            String userId = getIntent().getStringExtra(EXTRA_ELEMENT_USER_ID);
+            ElementUserUtils.deleteUser(getBaseContext(), userId);
+        }
+    }
+
     private void showResult(String message, int iconResId) {
         ResultFragment fragment = new ResultFragment();
         fragment.setData(message, iconResId);
         fragment.show(getSupportFragmentManager(), null);
     }
 
-    private ElementFaceEnrollTask.Callback callback = new ElementFaceEnrollTask.Callback() {
+    private final ElementFaceEnrollTask.Callback callback = new ElementFaceEnrollTask.Callback() {
         @Override
         public void onComplete(String message, UserInfo userInfo, Map<String, Object> details) {
             showResult(message, R.drawable.icon_check);
+            isUserEnrolled = true;
         }
 
         @Override
