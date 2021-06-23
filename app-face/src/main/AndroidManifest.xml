@@ -10,7 +10,8 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".FaceExMainActivity"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,6 +23,7 @@
 
         <activity
             android:name=".SettingsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_settings" />
 
         <activity
@@ -29,15 +31,25 @@
             android:clearTaskOnLaunch="true" />
 
         <activity
-            android:name="com.element.camera.ElementFaceAuthActivity"
+            android:name=".LocalAuthActivity"
             android:clearTaskOnLaunch="true" />
 
         <activity
-            android:name=".ServerAuthActivity"
+            android:name=".LocalAuthTransparentActivity"
+            android:theme="@style/Theme.Transparent"
             android:clearTaskOnLaunch="true" />
 
         <activity
-            android:name=".ServerEnrollActivity"
+            android:name=".ServerSideEnrollActivity"
+            android:clearTaskOnLaunch="true" />
+
+        <activity
+            android:name=".ServerSideAuthActivity"
+            android:clearTaskOnLaunch="true" />
+
+        <activity
+            android:name=".ServerSideAuthTransparentActivity"
+            android:theme="@style/Theme.Transparent"
             android:clearTaskOnLaunch="true" />
     </application>
 

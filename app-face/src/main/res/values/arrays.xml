@@ -5,7 +5,8 @@
     </string-array>
 
     <string-array name="uiDelegate">
-        <item>SelfieDot</item>
+        <item>SelfieDotV2</item>
+        <item>SelfieDotV1</item>
         <item>Flower</item>
         <item>Wave</item>
     </string-array>

@@ -5,10 +5,10 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 buildscript {
     ext {
         globalMinSdkVersion = '21'
-        globalCompileSdkVersion = '29'
-        globalTargetSdkVersion = '29'
-        globalBuildToolsVersion = '29.0.3'
-        globalGradleVersion = '4.0.1'
+        globalCompileSdkVersion = '30'
+        globalTargetSdkVersion = '30'
+        globalBuildToolsVersion = '30.0.2'
+        globalGradleVersion = '4.2.1'
         globalKotlinVersion = '1.4.0'
         globalElementSdkVersion = '[PLACEHOLDER]'
 

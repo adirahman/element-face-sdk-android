@@ -61,7 +61,7 @@ public class EnrollFormFragment extends DialogFragment {
                     .enroll(getActivity());
         }
 
-        ((MainActivity) getActivity()).refreshUi();
+        ((CardExMainActivity) getActivity()).refreshUi();
         dismiss();
     }
 }

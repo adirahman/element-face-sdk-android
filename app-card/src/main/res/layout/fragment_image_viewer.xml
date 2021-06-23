@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/element"
-        android:padding="10dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="25dp"
         android:src="@drawable/element_logo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,14 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:visibility="gone" />
-
         </LinearLayout>
     </ScrollView>
 

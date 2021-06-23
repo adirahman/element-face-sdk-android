@@ -50,7 +50,7 @@ public class FetchFormFragment extends DialogFragment {
             return;
         }
 
-        ((MainActivity) getActivity()).startFetch(userId);
+        ((FaceExMainActivity) getActivity()).startFetch(userId);
         dismiss();
     }
 }

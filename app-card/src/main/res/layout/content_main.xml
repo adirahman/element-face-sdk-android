@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".CardExMainActivity"
     tools:showIn="@layout/activity_main">
 
     <ScrollView
@@ -21,56 +21,11 @@
             tools:layout_editor_absoluteX="200dp"
             tools:layout_editor_absoluteY="100dp">
 
-            <Spinner
-                android:id="@+id/selectDoc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:spinnerMode="dropdown" />
-
-            <Button
-                android:id="@+id/scanCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/card_scan" />
-
-            <Button
-                android:id="@+id/pickPhoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/pick_from_gallery" />
-
             <TextView
-                android:id="@+id/docTokenTextView"
+                android:id="@+id/userText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:ellipsize="end"
-                android:maxLines="1"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
-
-            <Button
-                android:id="@+id/ocrCardScan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/start_ocr_only" />
-
-            <Button
-                android:id="@+id/displayPhoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/display_photo" />
-
-            <Button
-                android:id="@+id/assignCardTokens"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/assign_token" />
-
-            <TextView
-                android:id="@+id/userNameTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:maxLines="1"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
                 android:textStyle="bold" />
@@ -82,41 +37,11 @@
                 android:maxLines="1"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
-            <TextView
-                android:id="@+id/userDocTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
-
             <Button
                 android:id="@+id/addUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/add_user" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/server_flow"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
-
-            <Button
-                android:id="@+id/ocrFm"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/server_enroll" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/local_flow"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
             <Button
                 android:id="@+id/localEnroll"
@@ -124,25 +49,90 @@
                 android:layout_height="wrap_content"
                 android:text="@string/face_enroll" />
 
-            <Button
-                android:id="@+id/ocrMatching"
+            <TextView
+                android:id="@+id/docText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/start_ocr_fm" />
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/docTypeIdText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/docSelect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/doc_select" />
+
+            <Button
+                android:id="@+id/cardScan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_scan" />
+
+            <TextView
+                android:id="@+id/tokenTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
+
+            <Button
+                android:id="@+id/performOcr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/perform_ocr" />
+
+            <Button
+                android:id="@+id/cardFaceMatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_face_match" />
+
+            <Button
+                android:id="@+id/ocrReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ocr_review" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="@string/more_options"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Small" />
 
             <Button
-                android:id="@+id/ocrStatus"
+                android:id="@+id/checkReviewStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/check_ocr_status" />
+                android:text="@string/check_review_status" />
+
+            <Button
+                android:id="@+id/displayScannedPhotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/display_scanned_photos" />
+
+            <Button
+                android:id="@+id/displaySelfies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/display_selfies" />
 
             <Button
                 android:id="@+id/deleteUser"

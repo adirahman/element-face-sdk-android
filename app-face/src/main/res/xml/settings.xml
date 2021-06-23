@@ -9,7 +9,7 @@
         app:useSimpleSummaryProvider="true" />
 
     <ListPreference
-        app:defaultValue="SelfieDot"
+        app:defaultValue="SelfieDotV2"
         app:entries="@array/uiDelegate"
         app:entryValues="@array/uiDelegate"
         app:key="uiDelegate"

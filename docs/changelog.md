@@ -1,8 +1,18 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.5.0.26096
+[Jun 22, 2021]
+* Built on Android 11 (API level 30)
+* Introduced new SelfieDot UI
+* Enhanced liveness detection modes
+* Separated the 32-bit resources into a standalone AAR package
+* Reworked behaviors when starting the face activities via `startActivityForResult`
+* Provided new APIs to obtain the previous authentication records
+* Enabled push notifications for the eKYC solution
+
 #### Version: 1.4.0.22471
-[Jan 20, 2020]
+[Jan 20, 2021]
 * The eKYC solution - released the Element Card SDK for the OCR & Review services
 
 #### Version: 1.3.0

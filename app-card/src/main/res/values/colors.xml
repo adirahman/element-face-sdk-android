@@ -9,5 +9,7 @@
     <color name="textColorHighlight">@color/colorAccent</color>
 
     <color name="element_titleTextColor">@android:color/white</color>
+    <color name="element_statusBarColor">@color/colorPrimary</color>
+    <color name="element_negativeButtonColor">@color/colorPrimary</color>
     <color name="actionBarBg">@color/colorPrimary</color>
 </resources>

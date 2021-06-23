@@ -8,8 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.element.camera.UserInfo
 
-class UserInfoAdapter(private val userInfoList: ArrayList<UserInfo>, private val mainActivity: MainActivity) :
-        RecyclerView.Adapter<UserInfoAdapter.MyViewHolder>() {
+class UserInfoAdapter(
+    private val userInfoList: ArrayList<UserInfo>,
+    private val mainActivity: FaceExMainActivity
+) :
+    RecyclerView.Adapter<UserInfoAdapter.MyViewHolder>() {
 
     class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 
@@ -20,7 +23,8 @@ class UserInfoAdapter(private val userInfoList: ArrayList<UserInfo>, private val
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val textView = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false) as TextView
+        val textView = LayoutInflater.from(parent.context)
+            .inflate(android.R.layout.simple_list_item_1, parent, false) as TextView
         textView.setTextColor(Color.BLACK)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             textView.setTextAppearance(android.R.style.TextAppearance_DeviceDefault_Medium)

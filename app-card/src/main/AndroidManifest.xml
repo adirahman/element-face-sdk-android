@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".CardExMainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,11 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="com.element.camera.ElementCardScanActivity" />
-        <activity android:name="com.element.camera.ElementFaceAuthActivity" />
         <activity android:name="com.element.camera.ElementFaceEnrollActivity" />
-        <activity android:name=".CardToFaceMatchingActivity" />
+        <activity android:name="com.element.camera.ElementFaceAuthActivity" />
     </application>
 
 </manifest>

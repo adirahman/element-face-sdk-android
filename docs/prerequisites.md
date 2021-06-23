@@ -19,7 +19,7 @@ The Element Face SDK and Element Card SDK are distributed via the Element Maven 
     elementMavenAccessKey=[PLACEHOLDER]
     elementMavenSecretKey=[PLACEHOLDER]
     ```
-1. Set `globalElementSdkVersion` to the version of the SDK to be distributed in `build.gradle` at the project level. The SDK version is in the format of `major.minor.increments.build`. Versions later than 1.4.0.22471 are published to the Element Maven server. The released SDK versions are available in [changelogs](/changelog.md). 
+1. Set `globalElementSdkVersion` to the version of the SDK to be distributed in `build.gradle` at the project level.
     ```
     buildscript {
         ext {
@@ -28,19 +28,12 @@ The Element Face SDK and Element Card SDK are distributed via the Element Maven 
             ...
         }
     ```
-1. Declare the repository in `build.gradle` at the project level.
+1. Load from `loacl.properties` and declare the maven repository in `build.gradle` at the project level.
     ```
-    buildscript {
-        repositories {
-            maven {
-                url "s3://maven.android.discoverelement.com/releases"
-                credentials(AwsCredentials) {
-                    accessKey elementMavenAccessKey
-                    secretKey elementMavenSecretKey
-                }
-            }
-        }
-    }
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    ...
 
     allprojects {
         repositories {

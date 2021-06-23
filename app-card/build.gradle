@@ -23,9 +23,9 @@ android {
 
 dependencies {
     // [required] Element libs
-    implementation "com.element:face-cam:${globalElementSdkVersion}"
-    implementation "com.element:face-core:${globalElementSdkVersion}"
-    implementation "com.element:face-ui:${globalElementSdkVersion}"
+    implementation "com.element:face-cam:$globalElementSdkVersion"
+    implementation "com.element:face-core:$globalElementSdkVersion"
+    implementation "com.element:face-ui:$globalElementSdkVersion"
 
     // [required] dependencies
     implementation 'androidx.work:work-runtime:2.3.4'
@@ -38,15 +38,17 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.0.7'
 
     // [required] for device enrollment
-    implementation "com.element:face-support:${globalElementSdkVersion}"
+    implementation "com.element:face-support:$globalElementSdkVersion"
 
     // [required] for card
-    implementation "com.element:card:${globalElementSdkVersion}"
+    implementation "com.element:card:$globalElementSdkVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$globalKotlinVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$globalKotlinVersion"
+
+    // [optional] for the legacy 32-bit support
+    implementation "com.element:face-32bit:$globalElementSdkVersion"
 
     // [optional] for this demo app
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$globalKotlinVersion"
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.preference:preference:1.1.1'
 }

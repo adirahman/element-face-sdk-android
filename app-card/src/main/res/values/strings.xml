@@ -1,53 +1,39 @@
 <resources>
     <string name="name">Name</string>
     <string name="user_id_optional">User ID (Optional)</string>
-    <string name="user_id_required">User ID</string>
-    <string name="local_auth">Local auth</string>
-    <string name="server_auth">Server side auth</string>
-    <string name="enroll_completed">User account created</string>
-    <string name="enroll_cancelled">Enrollment cancelled</string>
-    <string name="auth_cancelled">Authentication cancelled</string>
-    <string name="no_user">No User</string>
-    <string name="user_id_status">User ID: %s\n</string>
-    <string name="user_doc_status">Scanned: %s\n</string>
-    <string name="token_status">Token: %s</string>
+    <string name="enroll_completed">Account successfully created!</string>
+    <string name="enroll_canceled">Enrollment canceled</string>
+
     <string name="error_msg_empty_fields">Please enter user information</string>
-    <string name="msg_fake">Fake authentication</string>
-    <string name="msg_verified">Verified %1$s</string>
-    <string name="msg_not_verified">Please try again</string>
-    <string name="msg_query_succeed">User has enrolled on server successfully</string>
-    <string name="msg_query_failed">Status not found</string>
     <string name="enroll_info">Enter information to enroll a new user. Element SDK will assign a user ID if the User ID field is blank. Enrollment will run on the device.</string>
     <string name="processing">Processing…</string>
-    <string name="capture_failed">Please position your face inside the outline and follow the instructions</string>
-    <string name="retry">Try Again</string>
     <string name="revision">Post Changes To Dashboard</string>
-    <string name="exit">Exit</string>
-    <string name="title_activity_settings">Settings</string>
+
+    <string name="no_user">No User</string>
+    <string name="user_id_status">User ID: %s</string>
+    <string name="add_user">Add User</string>
+    <string name="face_enroll">Local selfie enrollment</string>
+
+    <string name="no_document">No Document</string>
+    <string name="doc_type_id_status">DocType ID: %s</string>
+    <string name="doc_select">Document select</string>
+    <string name="card_scan">Card scan</string>
+
+    <string name="token_status">Token: %s</string>
+    <string name="perform_ocr">Perform OCR</string>
+    <string name="card_face_match">Card-to-face matching</string>
+    <string name="ocr_review">OCR &amp; online review</string>
+
+    <string name="more_options">More options</string>
+    <string name="check_review_status">Check Last OCR &amp; Review status</string>
+    <string name="display_scanned_photos">Display Scanned Photos</string>
+    <string name="display_selfies">Display enrollment selfies</string>
+    <string name="delete_account">Delete Account</string>
 
     <string name="ocr_result_title">OCR Results:</string>
+
     <string name="review_result_title">Review Results:</string>
     <string name="ocr_review_result_title">OCR/Review Results:</string>
     <string name="card_completed">ID card scan successfully!</string>
     <string name="card_cancelled">Couldn\'t complete ID card scan</string>
-    <string name="pick_from_gallery">Pick from gallery</string>
-    <string name="select_doc">Select the document</string>
-    <string name="card_scan">Card scan</string>
-    <string name="start_ocr_only">Server OCR</string>
-    <string name="start_ocr_fm">OCR &amp; Face Matching</string>
-    <string name="check_ocr_status">Check Last OCR &amp; Review status</string>
-    <string name="assign_token">Assign token to user</string>
-    <string name="add_user">Add User</string>
-    <string name="pick_card">Pick card %s photo</string>
-    <string name="pick_card_front">Pick card front photo</string>
-    <string name="pick_card_front2">Pick another card front photo</string>
-    <string name="pick_card_back">Pick card back photo</string>
-    <string name="server_enroll">Server enrollment &amp; OCR</string>
-    <string name="face_enroll">Local selfie enrollment</string>
-    <string name="delete_account">Delete Account</string>
-    <string name="display_photo">Display Card Photos</string>
-    <string name="no_display">Unable to display the photo, which may have upload to the server already. The token can still be assigned to users for OCR services later.</string>
-    <string name="server_flow">Flow 1: Server-side enrollment with OCR in one step</string>
-    <string name="local_flow">Flow 2: Complete local enrollment first then start OCR</string>
-    <string name="more_options">More options</string>
 </resources>
