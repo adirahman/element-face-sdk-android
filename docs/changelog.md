@@ -1,6 +1,10 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.5.1.26474
+[Jul 08, 2021]
+* Improved the ease of use mode
+
 #### Version: 1.5.0.26096
 [Jun 22, 2021]
 * Built on Android 11 (API level 30)
