@@ -1,9 +1,13 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.5.2.26831
+[Jul 23, 2021]
+* Adjusted the face detection behaviors slightly 
+
 #### Version: 1.5.1.26474
 [Jul 08, 2021]
-* Improved the ease of use mode
+* Improved the performance for the ease of use mode
 
 #### Version: 1.5.0.26096
 [Jun 22, 2021]
