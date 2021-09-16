@@ -1,16 +1,20 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.5.3.28154
+[September 16, 2021]
+* Performance tuning
+
 #### Version: 1.5.2.26831
-[Jul 23, 2021]
+[August 5, 2021]
 * Adjusted the face detection behaviors slightly 
 
 #### Version: 1.5.1.26474
-[Jul 08, 2021]
-* Improved the performance for the ease of use mode
+[July 8, 2021]
+* Hotfixes
 
 #### Version: 1.5.0.26096
-[Jun 22, 2021]
+[June 22, 2021]
 * Built on Android 11 (API level 30)
 * Introduced new SelfieDot UI
 * Enhanced liveness detection modes
@@ -20,30 +24,30 @@
 * Enabled push notifications for the eKYC solution
 
 #### Version: 1.4.0.22471
-[Jan 20, 2021]
+[January 20, 2021]
 * The eKYC solution - released the Element Card SDK for the OCR & Review services
 
 #### Version: 1.3.0
-[Aug 8, 2020]
+[August 8, 2020]
 * Updated liveness detection UI
 * New theming
 * Enhanced security and code obfuscation
 * User management with ElementUserUtils
 
 #### Version: 1.2.3
-[Mar 25, 2020]
+[March 25, 2020]
 * Adjusted background services sliglty
 
 #### Version: 1.2.2
-[Mar 17, 2020]
+[March 17, 2020]
 * Imrpoved UX for liveness detection
 
 #### Version: 1.2.1
-[Mar 10, 2020]
+[March 10, 2020]
 * Hotfix to post scores to the backend
 
 #### Version: 1.2.0
-[Mar 3, 2020]
+[March 3, 2020]
 * Introduced [`element-face-http`](element-face-http-guide.md) and [`element-card-sdk`](element-card-sdk-guide.md)
 * Made `element-face-cam` a standalone module. It's possible to import `element-face-cam` for face detection only. Please refer to [`app-face-detection`](../app-face-detection).
 * `ElementFaceCaptureActivity` can handle enrollment and authentication for server processing.
@@ -51,16 +55,16 @@
 * Enabling face tutorials by default
 
 #### Version: 1.1.3
-[Jan 7, 2020]
+[January 7, 2020]
 * Restored EXTRA_SECONDARY_TUTORIAL
 
 #### Version: 1.1.2
-[Dec 20, 2019]
+[December 20, 2019]
 * Supported the Android 10 OS
 * Rolled back EXTRA_SECONDARY_TUTORIAL
 
 #### Version: 1.1.1
-[Nov 1, 2019]
+[November 1, 2019]
 * Supported more UI customization - please refer to [element-face-ui](./element-face-ui.md)
 
 #### Version: 1.1.0
