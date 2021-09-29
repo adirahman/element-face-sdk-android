@@ -44,7 +44,10 @@ open class FaceExMainActivity : AppCompatActivity() {
 
         facexUserList.layoutManager = LinearLayoutManager(baseContext)
         facexUserList.adapter =
-            UserInfoAdapter(ArrayList(ElementUserUtils.getUsers(baseContext)), this@FaceExMainActivity)
+            UserInfoAdapter(
+                ArrayList(ElementUserUtils.getUsers(baseContext)),
+                this@FaceExMainActivity
+            )
 
         facexUserList.addItemDecoration(DividerItemDecoration(baseContext, VERTICAL))
     }

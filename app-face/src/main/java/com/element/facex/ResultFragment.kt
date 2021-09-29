@@ -17,20 +17,14 @@ class ResultFragment : DialogFragment() {
     private var iconResId = 0
 
     companion object {
-        fun show(activity: ElementFaceCaptureActivity, code: Int, message: String, iconResId: Int) {
-            val displayMessage = if (code < 0) {
-                activity.getString(R.string.error_no_network)
-            } else {
-                message
-            }
-
+        fun show(activity: ElementFaceCaptureActivity, message: String, iconResId: Int) {
             val resultFragment = ResultFragment().apply {
-                setData(displayMessage, iconResId)
+                setData(message, iconResId)
             }
 
             activity.supportFragmentManager.beginTransaction()
-                    .add(resultFragment, null)
-                    .commitAllowingStateLoss()
+                .add(resultFragment, null)
+                .commitAllowingStateLoss()
         }
     }
 
@@ -41,9 +35,9 @@ class ResultFragment : DialogFragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         val rootView = inflater.inflate(R.layout.fragment_server_auth_result, container, false)

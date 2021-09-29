@@ -1,6 +1,6 @@
 ![element](images/element.png "element")
 # Element SelfieDot
-The Element Face SDK (the SDK) is an API library for creating biometric models that can be used to authenticate users. This document contains information for enabling the latest Face Gaze functionality -- SelfieDot. 
+The Element Face SDK (the SDK) is an API library for creating biometric models that can be used to authenticate users. This document contains information for enabling the latest Face Gaze functionality - SelfieDot. 
 
 ## Dependencies
 - Requires Element Face SDK
@@ -30,7 +30,6 @@ Here is an exampe of a working theme:
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 ```
-
 
 ## Usage of the Element Activities
 When starting an Enrollment or Auth Activity just add this Extra: 

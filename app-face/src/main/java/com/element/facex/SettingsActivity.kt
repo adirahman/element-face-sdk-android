@@ -13,9 +13,9 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.settings_activity)
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.settings, SettingsFragment())
-                .commit()
+            .beginTransaction()
+            .replace(R.id.settings, SettingsFragment())
+            .commit()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 

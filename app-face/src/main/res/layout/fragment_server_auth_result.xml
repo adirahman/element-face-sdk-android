@@ -27,23 +27,25 @@
 
     <Button
         android:id="@+id/retryButton"
-        style="@style/WhiteTextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="20dp"
+        android:background="@null"
         android:text="@string/retry"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/white"
         android:textIsSelectable="false" />
 
     <Button
         android:id="@+id/exitButton"
-        style="@style/WhiteTextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:padding="20dp"
+        android:background="@null"
         android:text="@string/exit"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="@color/white"
         android:textIsSelectable="false" />
 </LinearLayout>

@@ -1,6 +1,12 @@
 ![element](images/element.png "element")
 ## Element FM SDK - Changelog
 
+#### Version: 1.6.0.28466
+[September 29, 2021]
+* Refined the SDK default settings
+* Formalized the SDK public [resources](element-sdk-resources-guide.md)
+* Improved detection and liveness performances
+
 #### Version: 1.5.3.28154
 [September 16, 2021]
 * Performance tuning
@@ -76,6 +82,6 @@
   * element-face-support
   * element-face-ui
 
-#### Older Versions
+#### Legacy Versions
 * [Element FM SDK](https://github.com/Element1/element-android-examples/blob/master/element-fm-sdk-example/changelog.md)
 * [Element Face SDK](https://github.com/Element1/element-android-examples/blob/master/element-face-sdk-example/changelog.md)

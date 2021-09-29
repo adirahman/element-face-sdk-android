@@ -14,9 +14,9 @@ open class ServerSideAuthActivity : ElementFaceCaptureActivity() {
         if (capture.success) {
             toastMessage(R.string.processing)
             ElementFaceAuthTask(
-                    getString(R.string.face_auth_url),
-                    userId,
-                    capture
+                getString(R.string.face_auth_url),
+                userId,
+                capture
             ).post(callback)
         } else {
             showResult(0, getString(R.string.capture_failed), R.drawable.icon_focus)
@@ -24,7 +24,7 @@ open class ServerSideAuthActivity : ElementFaceCaptureActivity() {
     }
 
     private fun showResult(code: Int, message: String, iconResId: Int) {
-        ResultFragment.show(this, code, message, iconResId)
+        ResultFragment.show(this, message, iconResId)
     }
 
     private val callback: ElementFaceAuthTask.Callback = object : ElementFaceAuthTask.Callback {
